@@ -165,6 +165,10 @@
   body {
     @apply bg-background text-foreground antialiased;
     font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+    background-image: url('/public/placeholder.svg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
   }
 
   /* Premium Typography */
@@ -260,6 +264,11 @@
   .blur-overlay {
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
+  }
+
+  .main-container {
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
   }
 }
 

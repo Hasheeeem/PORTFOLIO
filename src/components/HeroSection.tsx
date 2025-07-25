@@ -10,9 +10,9 @@ const HeroSection = () => {
   ];
 
   return (
-    <section className="min-h-screen flex items-center justify-center relative overflow-hidden pt-20">
+    <section className="min-h-screen flex items-center justify-center relative overflow-hidden pt-20 card-glass">
       {/* Background Elements */}
-      <div className="absolute inset-0 bg-gradient-subtle"></div>
+      <div className="absolute inset-0 bg-gradient-subtle/0"></div>
       <div className="absolute top-20 right-20 w-72 h-72 bg-primary/5 rounded-full blur-3xl animate-float"></div>
       <div className="absolute bottom-20 left-20 w-96 h-96 bg-accent/10 rounded-full blur-3xl animate-float" style={{ animationDelay: "2s" }}></div>
 
