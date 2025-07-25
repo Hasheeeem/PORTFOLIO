@@ -47,7 +47,7 @@ const projects = [
 
 const ProjectsSection = () => {
   return (
-    <section className="py-24 px-6">
+    <section className="py-24 px-6 card-glass">
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
         <div className="text-center mb-16 animate-fade-in">

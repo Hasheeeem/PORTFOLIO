@@ -32,7 +32,7 @@ const experience = [
 
 const ExperienceSection = () => {
   return (
-    <section className="py-24 px-6 bg-gradient-subtle">
+    <section className="py-24 px-6 bg-gradient-subtle card-glass">
       <div className="max-w-6xl mx-auto">
         {/* Section Header */}
         <div className="text-center mb-16 animate-fade-in">
