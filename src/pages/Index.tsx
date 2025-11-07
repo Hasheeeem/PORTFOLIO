@@ -1,24 +1,48 @@
-import Navigation from "@/components/Navigation";
-import HeroSection from "@/components/HeroSection";
-import AboutSection from "@/components/AboutSection";
-import ExperienceSection from "@/components/ExperienceSection";
-import ProjectsSection from "@/components/ProjectsSection";
-import SkillsSection from "@/components/SkillsSection";
-import EducationSection from "@/components/EducationSection";
+import { useState, useEffect } from 'react';
+import { Helmet } from 'react-helmet-async';
+import { Layout } from '@/components/layout/Layout';
+import { Hero } from '@/components/sections/Hero';
+import { About } from '@/components/sections/About';
+import { Experience } from '@/components/sections/Experience'; // NEW!
+import { Expertise } from '@/components/sections/Expertise';
+import { Projects } from '@/components/sections/Projects';
+import { Zypher } from '@/components/sections/Zypher';
+import { AIJourney } from '@/components/sections/AIJourney';
+import { Contact } from '@/components/sections/Contact';
+import { PagePreloader } from '@/components/ui/PagePreloader';
 
 const Index = () => {
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    // Simple timeout for preloader
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 3000);
+
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
-    <div className="min-h-screen bg-background/50 main-container">
-      <Navigation />
-      <div className="space-y-8 p-4 md:p-8">
-        <HeroSection />
-        <AboutSection />
-        <ExperienceSection />
-        <ProjectsSection />
-        <SkillsSection />
-        <EducationSection />
-      </div>
-    </div>
+    <>
+      <Helmet>
+        <title>Hasheem — Developer, Founder & Creator</title>
+        <meta name="description" content="Building next-gen digital products with AI, stunning design, and clean code. Founder of ZYPHER." />
+      </Helmet>
+
+      <PagePreloader isLoading={isLoading} />
+
+      <Layout>
+        <Hero />
+        <About />
+        <Experience /> {/* 🔥 NEW SECTION */}
+        <Expertise />
+        <Projects />
+        <Zypher />
+        <AIJourney />
+        <Contact />
+      </Layout>
+    </>
   );
 };
 
