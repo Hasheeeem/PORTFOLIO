@@ -1,5 +1,5 @@
 import { motion, useScroll, useTransform } from 'framer-motion';
-import { ArrowRight, Github, Linkedin, Mail } from 'lucide-react';
+import { ArrowRight, Github, Linkedin, Mail, Download } from 'lucide-react';
 import { useRef } from 'react';
 import { AnimatedTerminal } from '@/components/ui/AnimatedTerminal';
 
@@ -34,11 +34,11 @@ export const Hero = () => {
       <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-purple-600/30 rounded-full blur-[120px] animate-pulse" />
       <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-blue-600/30 rounded-full blur-[120px] animate-pulse" style={{ animationDelay: '1s' }} />
 
-      <div className="container mx-auto px-6 lg:px-12 relative z-10 pt-20">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-12 relative z-10 pt-20">
         <motion.div style={{ y, opacity }}>
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             {/* Left Column - Text Content */}
-            <div className="space-y-8">
+            <div className="space-y-6 sm:space-y-8">
               {/* Badge */}
               <motion.div
                 initial={{ opacity: 0, x: -20 }}
@@ -50,16 +50,16 @@ export const Hero = () => {
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
                   <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
                 </span>
-                <span className="text-sm font-medium">Available for work</span>
+                <span className="text-xs sm:text-sm font-medium">Available for work</span>
               </motion.div>
 
-              {/* Main Heading - Bold & Large */}
+              {/* Main Heading */}
               <div className="space-y-4">
                 <motion.h1
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 0.1 }}
-                  className="text-5xl sm:text-6xl md:text-8xl lg:text-9xl font-black leading-none tracking-tight"
+                  className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-black leading-none tracking-tight"
                 >
                   HASH<span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-pink-400 to-blue-400">EEM</span>
                 </motion.h1>
@@ -82,7 +82,7 @@ export const Hero = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.3 }}
-                className="text-lg md:text-xl text-gray-400 leading-relaxed max-w-xl"
+                className="text-base sm:text-lg md:text-xl text-gray-400 leading-relaxed max-w-xl"
               >
                 Building next-gen digital products with AI, stunning design, and 
                 clean code. Founder of <span className="text-white font-semibold">ZYPHER</span>.
@@ -93,60 +93,72 @@ export const Hero = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.4 }}
-                className="flex flex-wrap gap-4"
+                className="flex flex-wrap gap-3 sm:gap-4"
               >
                 <a
                   href="#projects"
-                  className="group relative px-8 py-4 bg-white text-black font-bold rounded-full overflow-hidden transition-transform hover:scale-105"
+                  className="group relative px-6 sm:px-8 py-3 sm:py-4 bg-white text-black font-bold rounded-full overflow-hidden transition-transform hover:scale-105"
                 >
-                  <span className="relative z-10 flex items-center gap-2">
+                  <span className="relative z-10 flex items-center gap-2 text-sm sm:text-base">
                     View Work
-                    <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                    <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" />
                   </span>
                   <div className="absolute inset-0 bg-gradient-to-r from-purple-400 to-pink-400 opacity-0 group-hover:opacity-100 transition-opacity" />
                 </a>
 
+                {/* NEW: DOWNLOAD RESUME BUTTON */}
+                <a
+                  href="/resume.pdf" // Place your PDF in /public/resume.pdf
+                  download="Muhammed_Hasheem_Resume.pdf"
+                  className="group px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-purple-600 to-pink-600 text-white font-bold rounded-full hover:from-purple-500 hover:to-pink-500 transition-all hover:scale-105 shadow-lg hover:shadow-purple-500/50"
+                >
+                  <span className="flex items-center gap-2 text-sm sm:text-base">
+                    <Download className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-y-0.5 transition-transform" />
+                    Download Resume
+                  </span>
+                </a>
+
                 <a
                   href="#contact"
-                  className="px-8 py-4 bg-white/10 backdrop-blur-md border border-white/20 text-white font-bold rounded-full hover:bg-white/20 transition-all"
+                  className="px-6 sm:px-8 py-3 sm:py-4 bg-white/10 backdrop-blur-md border border-white/20 text-white font-bold rounded-full hover:bg-white/20 transition-all text-sm sm:text-base"
                 >
                   Get In Touch
                 </a>
               </motion.div>
 
-              {/* Social Links - FIXED */}
+              {/* Social Links */}
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.5 }}
-                className="flex gap-4"
+                className="flex gap-3 sm:gap-4"
               >
                 <a
                   href="https://github.com/Hasheeeem"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-12 h-12 rounded-full bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center hover:bg-white/20 hover:scale-110 transition-all"
+                  className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center hover:bg-white/20 hover:scale-110 transition-all"
                 >
-                  <Github className="w-5 h-5" />
+                  <Github className="w-4 h-4 sm:w-5 sm:h-5" />
                 </a>
                 <a
                   href="https://www.linkedin.com/in/muhammedhasheem/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-12 h-12 rounded-full bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center hover:bg-white/20 hover:scale-110 transition-all"
+                  className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center hover:bg-white/20 hover:scale-110 transition-all"
                 >
-                  <Linkedin className="w-5 h-5" />
+                  <Linkedin className="w-4 h-4 sm:w-5 sm:h-5" />
                 </a>
                 <a
                   href="mailto:hasheemhsm4@gmail.com"
-                  className="w-12 h-12 rounded-full bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center hover:bg-white/20 hover:scale-110 transition-all"
+                  className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center hover:bg-white/20 hover:scale-110 transition-all"
                 >
-                  <Mail className="w-5 h-5" />
+                  <Mail className="w-4 h-4 sm:w-5 sm:h-5" />
                 </a>
               </motion.div>
             </div>
 
-            {/* Right Column - ANIMATED TERMINAL */}
+            {/* Right Column - Animated Terminal */}
             <motion.div
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
