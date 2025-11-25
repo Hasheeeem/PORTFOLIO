@@ -37,8 +37,8 @@ export const Footer = () => {
             <div className="flex gap-4">
               {[
                 { icon: Github, href: 'https://github.com/Hasheeeem' },
-                { icon: Linkedin, href: '#' },
-                { icon: Mail, href: 'mailto:hello@hasheem.dev' },
+                { icon: Linkedin, href: 'https://www.linkedin.com/in/muhammedhasheem/' },
+                { icon: Mail, href: 'mailto:hasheemhsm4@gmail.com' },
               ].map((social, i) => (
                 <a
                   key={i}

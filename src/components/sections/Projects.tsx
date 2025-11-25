@@ -64,7 +64,7 @@ export const Projects = () => {
             PORTFOLIO
           </div>
           
-          <h2 className="text-7xl md:text-9xl font-black leading-none mb-6">
+          <h2 className="text-5xl sm:text-7xl md:text-9xl font-black leading-none mb-6">
             SELECTED <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">WORK</span>
           </h2>
           <p className="text-xl text-gray-400 max-w-2xl">

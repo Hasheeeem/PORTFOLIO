@@ -155,9 +155,8 @@
     --sidebar-border: 240 3.7% 15.9%;
     --sidebar-ring: 240 4.9% 83.9%;
   }
-}
 
-@layer base {
+  /* Base Styles */
   * {
     @apply border-border;
   }
@@ -174,24 +173,26 @@
   /* Smooth scroll */
   html {
     scroll-behavior: smooth;
+    font-size: 16px;
   }
   
   /* Custom scrollbar */
   ::-webkit-scrollbar {
-    width: 8px;
-    height: 8px;
+    width: 10px;
+    height: 10px;
   }
   
   ::-webkit-scrollbar-track {
-    @apply bg-muted;
+    background: transparent;
   }
   
   ::-webkit-scrollbar-thumb {
-    @apply bg-muted-foreground/30 rounded-full;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
   }
   
   ::-webkit-scrollbar-thumb:hover {
-    @apply bg-muted-foreground/50;
+    background: rgba(0, 0, 0, 0.3);
   }
 }
 
@@ -226,5 +227,267 @@
   .noise {
     background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' /%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.05'/%3E%3C/svg%3E");
   }
+}
+
+/* ===================================
+   REMOVE SECTION SCROLLBARS
+   =================================== */
+
+/* Remove overflow from sections */
+section {
+  overflow: visible !important;
+}
+
+/* Only body/html control scroll */
+html,
+body {
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+/* Keep rounded corners working */
+.rounded-xl,
+.rounded-2xl,
+.rounded-3xl,
+.rounded-full {
+  overflow: hidden;
+}
+
+/* Keep images contained */
+img,
+video,
+iframe {
+  max-width: 100%;
+  height: auto;
+}
+
+/* ===================================
+   PERFECT RESPONSIVENESS
+   =================================== */
+
+/* Remove tap highlight */
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Fix text overflow */
+h1, h2, h3, h4, h5, h6, p {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+/* Better touch targets */
+button,
+a {
+  min-height: 44px;
+}
+
+/* ===================================
+   STANDARD SIZING (NOT TOO BIG)
+   =================================== */
+
+/* Desktop - More standard sizes */
+@media (min-width: 1280px) {
+  .text-9xl {
+    font-size: 5rem !important;
+    line-height: 1 !important;
+  }
   
+  .text-8xl {
+    font-size: 4rem !important;
+  }
+  
+  .text-7xl {
+    font-size: 3.5rem !important;
+  }
+  
+  .text-6xl {
+    font-size: 3rem !important;
+  }
+}
+
+@media (min-width: 1024px) and (max-width: 1279px) {
+  .text-9xl {
+    font-size: 4.5rem !important;
+  }
+  
+  .text-8xl {
+    font-size: 3.5rem !important;
+  }
+  
+  .text-7xl {
+    font-size: 3rem !important;
+  }
+}
+
+
+/* Tablet */
+@media (max-width: 1023px) and (min-width: 768px) {
+  .text-9xl {
+    font-size: 4rem !important;
+  }
+  
+  .text-8xl {
+    font-size: 3.5rem !important;
+  }
+  
+  .text-7xl {
+    font-size: 3rem !important;
+  }
+}
+
+/* Standard padding for sections */
+.py-32 {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
+
+@media (min-width: 1024px) {
+  .py-32 {
+    padding-top: 8rem;
+    padding-bottom: 8rem;
+  }
+}
+
+
+/* Mobile */
+@media (max-width: 767px) {
+  html {
+    font-size: 14px;
+  }
+  
+  .text-9xl {
+    font-size: 3rem !important;
+    line-height: 1.1 !important;
+  }
+  
+  .text-8xl {
+    font-size: 2.5rem !important;
+    line-height: 1.1 !important;
+  }
+  
+  .text-7xl {
+    font-size: 2rem !important;
+    line-height: 1.2 !important;
+  }
+  
+  .text-6xl {
+    font-size: 1.75rem !important;
+  }
+  
+  .text-5xl {
+    font-size: 1.5rem !important;
+  }
+  
+  .text-4xl {
+    font-size: 1.25rem !important;
+  }
+  
+  .container {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+  
+  .py-32 {
+    padding-top: 4rem !important;
+    padding-bottom: 4rem !important;
+  }
+  
+  .py-24 {
+    padding-top: 3rem !important;
+    padding-bottom: 3rem !important;
+  }
+  
+  .py-20 {
+    padding-top: 2.5rem !important;
+    padding-bottom: 2.5rem !important;
+  }
+}
+
+/* Small phones */
+@media (max-width: 374px) {
+  html {
+    font-size: 13px;
+  }
+  
+  .text-9xl {
+    font-size: 2.5rem !important;
+  }
+  
+  .text-8xl {
+    font-size: 2rem !important;
+  }
+}
+
+/* ===================================
+   iOS & SAFARI FIXES
+   =================================== */
+
+@supports (-webkit-touch-callout: none) {
+  body {
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
+/* Prevent iOS zoom on input */
+@media screen and (max-width: 768px) {
+  input,
+  select,
+  textarea {
+    font-size: 16px !important;
+  }
+}
+
+/* Prevent text size adjust */
+html {
+  -webkit-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+/* ===================================
+   ANIMATIONS
+   =================================== */
+
+@keyframes gradient-shift {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+/* Accessibility - Reduce motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ===================================
+   UTILITY FIXES
+   =================================== */
+
+/* Ensure no horizontal scroll */
+body {
+  max-width: 100vw;
+  position: relative;
+}
+
+/* Fix container max width */
+.container {
+  max-width: 100%;
+}
+
+/* Better image handling */
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
 }

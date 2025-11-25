@@ -17,7 +17,7 @@ export const Hero = () => {
     <section 
       ref={containerRef}
       id="home" 
-      className="relative min-h-screen flex items-center overflow-hidden bg-black text-white"
+      className="relative min-h-screen flex items-center bg-black text-white"
     >
       {/* Animated Grid Background */}
       <div className="absolute inset-0 opacity-20">
@@ -59,7 +59,7 @@ export const Hero = () => {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 0.1 }}
-                  className="text-6xl md:text-8xl lg:text-9xl font-black leading-none tracking-tight"
+                  className="text-5xl sm:text-6xl md:text-8xl lg:text-9xl font-black leading-none tracking-tight"
                 >
                   HASH<span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-pink-400 to-blue-400">EEM</span>
                 </motion.h1>
@@ -68,10 +68,10 @@ export const Hero = () => {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 0.2 }}
-                  className="flex items-center gap-3"
+                  className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-3"
                 >
                   <div className="h-1 w-12 bg-gradient-to-r from-purple-400 to-pink-400 rounded-full" />
-                  <p className="text-xl md:text-2xl text-gray-300 font-light">
+                  <p className="text-lg sm:text-xl md:text-2xl text-gray-300 font-light">
                     Developer × Founder × Creator
                   </p>
                 </motion.div>
@@ -114,28 +114,35 @@ export const Hero = () => {
                 </a>
               </motion.div>
 
-              {/* Social Links */}
+              {/* Social Links - FIXED */}
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.5 }}
                 className="flex gap-4"
               >
-                {[
-                  { icon: Github, href: 'https://github.com/Hasheeeem' },
-                  { icon: Linkedin, href: '#' },
-                  { icon: Mail, href: 'mailto:hello@hasheem.dev' },
-                ].map((social, i) => (
-                  <a
-                    key={i}
-                    href={social.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="w-12 h-12 rounded-full bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center hover:bg-white/20 hover:scale-110 transition-all"
-                  >
-                    <social.icon className="w-5 h-5" />
-                  </a>
-                ))}
+                <a
+                  href="https://github.com/Hasheeeem"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-12 h-12 rounded-full bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center hover:bg-white/20 hover:scale-110 transition-all"
+                >
+                  <Github className="w-5 h-5" />
+                </a>
+                <a
+                  href="https://www.linkedin.com/in/muhammedhasheem/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-12 h-12 rounded-full bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center hover:bg-white/20 hover:scale-110 transition-all"
+                >
+                  <Linkedin className="w-5 h-5" />
+                </a>
+                <a
+                  href="mailto:hasheemhsm4@gmail.com"
+                  className="w-12 h-12 rounded-full bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center hover:bg-white/20 hover:scale-110 transition-all"
+                >
+                  <Mail className="w-5 h-5" />
+                </a>
               </motion.div>
             </div>
 

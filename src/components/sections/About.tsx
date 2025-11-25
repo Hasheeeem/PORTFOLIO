@@ -14,38 +14,33 @@ export const About = () => {
   const imageY = useTransform(scrollYProgress, [0, 1], [-50, 50]);
   const textY = useTransform(scrollYProgress, [0, 1], [50, -50]);
 
-  const journey = [
-    {
-      year: '2020',
-      title: 'Started Coding',
-      description: 'Fell in love with building digital products',
-      icon: Code2,
-    },
-    {
-      year: '2022',
-      title: 'First Clients',
-      description: 'Delivered professional web applications',
-      icon: Target,
-    },
-    {
-      year: '2023',
-      title: 'Founded ZYPHER',
-      description: 'Launched my own tech solutions company',
-      icon: Rocket,
-    },
-    {
-      year: '2024',
-      title: 'AI/ML Journey',
-      description: 'Deep diving into artificial intelligence',
-      icon: Brain,
-    },
-    {
-      year: 'Now',
-      title: 'Building the Future',
-      description: 'Creating cutting-edge solutions',
-      icon: TrendingUp,
-    },
-  ];
+const journey = [
+  {
+    year: '2022',
+    title: 'Started Coding',
+    description: 'Fell in love with building digital products',
+  },
+  {
+    year: '2023',
+    title: 'First Clients',
+    description: 'Delivered professional web applications',
+  },
+  {
+    year: '2024',
+    title: 'AI/ML Journey Begins',
+    description: 'Started exploring artificial intelligence',
+  },
+  {
+    year: '2025',
+    title: 'Founded ZYPHER',
+    description: 'Launched my tech solutions company',
+  },
+  {
+    year: 'Now',
+    title: 'Building & Learning',
+    description: '50+ projects, pursuing AI/ML mastery',
+  },
+];
 
   const coreValues = [
     { icon: Award, title: 'Excellence', description: 'Never settle for good enough', color: 'from-yellow-500 to-orange-500' },
@@ -57,15 +52,15 @@ export const About = () => {
   const skills = [
     { category: 'Development', percentage: 95, color: 'bg-blue-500' },
     { category: 'UI/UX Design', percentage: 88, color: 'bg-purple-500' },
-    { category: 'AI/ML', percentage: 80, color: 'bg-orange-500' },
-    { category: 'Leadership', percentage: 90, color: 'bg-green-500' },
+    { category: 'AI/ML', percentage: 20, color: 'bg-orange-500' },
+    { category: 'Leadership', percentage: 100, color: 'bg-green-500' },
   ];
 
   return (
     <section 
       ref={containerRef}
       id="about" 
-      className="relative py-32 bg-white text-black overflow-hidden"
+      className="relative py-32 bg-white text-black"
     >
       {/* Decorative Elements */}
       <div className="absolute top-20 right-10 w-96 h-96 bg-gradient-to-br from-purple-200 to-pink-200 rounded-full blur-3xl opacity-30" />
@@ -84,7 +79,7 @@ export const About = () => {
             ABOUT ME
           </div>
           
-          <h2 className="text-7xl md:text-9xl font-black leading-none mb-8">
+          <h2 className="text-5xl sm:text-7xl md:text-9xl font-black leading-none mb-8">
             WHO I
             <br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 via-pink-600 to-blue-600">
@@ -162,24 +157,23 @@ export const About = () => {
             style={{ y: textY }}
             className="flex flex-col justify-center"
           >
-            {/* Tab Navigation */}
+            {/* Tab Navigation - NO EMOJIS */}
             <div className="flex gap-3 mb-8">
               {[
-                { id: 'story', label: 'My Story', icon: '📖' },
-                { id: 'skills', label: 'Skills', icon: '⚡' },
-                { id: 'values', label: 'Values', icon: '💎' },
+                { id: 'story', label: 'My Story' },
+                { id: 'skills', label: 'Skills' },
+                { id: 'values', label: 'Values' },
               ].map((tab) => (
                 <button
                   key={tab.id}
                   onClick={() => setActiveTab(tab.id as any)}
-                  className={`flex items-center gap-2 px-6 py-3 rounded-full font-bold transition-all ${
+                  className={`px-6 py-3 rounded-full font-bold transition-all ${
                     activeTab === tab.id
                       ? 'bg-black text-white scale-105'
                       : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
                   }`}
                 >
-                  <span>{tab.icon}</span>
-                  <span className="hidden sm:inline">{tab.label}</span>
+                  {tab.label}
                 </button>
               ))}
             </div>

@@ -4,14 +4,14 @@ export const personalInfo = {
   description: 'Building cutting-edge apps, websites, AI agents, and web services.',
   company: 'ZYPHER',
   companyTagline: 'Cutting-edge IT Solutions',
-  email: 'hello@hasheem.dev',
+  email: 'hasheemhsm4@gmail.com',
   location: 'Global',
   
   social: {
     github: 'https://github.com/Hasheeeem',
     linkedin: '#',
     twitter: '#',
-    email: 'mailto:hello@hasheem.dev',
+    email: 'mailto:hasheemhsm4@gmail.com',
   },
   
   heroStats: [

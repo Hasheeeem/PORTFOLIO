@@ -184,7 +184,7 @@ export const Experience = () => {
             EXPERIENCE & EDUCATION
           </div>
           
-          <h2 className="text-7xl md:text-9xl font-black leading-none mb-8">
+          <h2 className="text-5xl sm:text-7xl md:text-9xl font-black leading-none mb-8">
             MY <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">JOURNEY</span>
           </h2>
 
@@ -328,76 +328,66 @@ export const Experience = () => {
             </div>
 
             <div className="grid md:grid-cols-2 gap-4">
-                {[
+              {[
                 { 
-                    name: 'Workshop on Cryptocurrency and Blockchain', 
-                    year: '2024',
-                    issuer: 'NIT',
-                    icon: '🔗',
-                    color: 'from-yellow-500 to-orange-500'
+                  name: 'Workshop on Cryptocurrency and Blockchain', 
+                  year: '2024',
+                  issuer: 'NIT',
+                  gradient: 'from-yellow-500 to-orange-500'
                 },
                 { 
-                    name: 'Cyber Security And Ethical Hacking Workshop', 
-                    year: '2024',
-                    issuer: 'IIT',
-                    icon: '🔒',
-                    color: 'from-red-500 to-pink-500'
+                  name: 'Cyber Security And Ethical Hacking Workshop', 
+                  year: '2024',
+                  issuer: 'IIT',
+                  gradient: 'from-red-500 to-pink-500'
                 },
                 { 
-                    name: 'Data Analysis with R Programming', 
-                    year: '2024',
-                    issuer: 'Google',
-                    icon: '📊',
-                    color: 'from-blue-500 to-cyan-500'
+                  name: 'Data Analysis with R Programming', 
+                  year: '2024',
+                  issuer: 'Google',
+                  gradient: 'from-blue-500 to-cyan-500'
                 },
                 { 
-                    name: 'Python for Data Science, AI & Development', 
-                    year: '2024',
-                    issuer: 'IBM',
-                    icon: '🐍',
-                    color: 'from-indigo-500 to-purple-500'
+                  name: 'Python for Data Science, AI & Development', 
+                  year: '2024',
+                  issuer: 'IBM',
+                  gradient: 'from-indigo-500 to-purple-500'
                 },
                 { 
-                    name: 'Node.js Workshop', 
-                    year: '2024',
-                    issuer: 'Leopard Tech Labs',
-                    icon: '🟢',
-                    color: 'from-green-500 to-emerald-500'
+                  name: 'Node.js Workshop', 
+                  year: '2024',
+                  issuer: 'Leopard Tech Labs',
+                  gradient: 'from-green-500 to-emerald-500'
                 },
-                ].map((cert, i) => (
+              ].map((cert, i) => (
                 <motion.div
-                    key={i}
-                    initial={{ opacity: 0, scale: 0.9 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: i * 0.1 }}
-                    whileHover={{ scale: 1.05, y: -5 }}
-                    className="group relative overflow-hidden flex items-center gap-4 p-6 bg-white/5 border border-white/10 rounded-2xl hover:bg-white/10 transition-all"
+                  key={i}
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: i * 0.1 }}
+                  whileHover={{ scale: 1.05, y: -5 }}
+                  className="group relative overflow-hidden flex items-center gap-4 p-6 bg-white/5 border border-white/10 rounded-2xl hover:bg-white/10 transition-all"
                 >
-                    {/* Background Gradient on Hover */}
-                    <div className={`absolute inset-0 bg-gradient-to-r ${cert.color} opacity-0 group-hover:opacity-10 transition-opacity`} />
-                    
-                    {/* Icon */}
-                    <div className={`relative w-12 h-12 rounded-full bg-gradient-to-br ${cert.color} flex items-center justify-center flex-shrink-0 text-2xl group-hover:scale-110 transition-transform`}>
-                    {cert.icon}
-                    </div>
-                    
-                    {/* Content */}
-                    <div className="flex-1 relative">
-                    <p className="font-bold text-white group-hover:text-white transition-colors">
-                        {cert.name}
+                  {/* Background Gradient on Hover */}
+                  <div className={`absolute inset-0 bg-gradient-to-r ${cert.gradient} opacity-0 group-hover:opacity-10 transition-opacity`} />
+                  
+                  {/* Professional Icon - Just Award, no emojis */}
+                  <div className={`relative w-12 h-12 rounded-full bg-gradient-to-br ${cert.gradient} flex items-center justify-center flex-shrink-0`}>
+                    <Award className="w-6 h-6 text-white" />
+                  </div>
+                  
+                  {/* Content */}
+                  <div className="flex-1 relative">
+                    <p className="font-bold text-white">
+                      {cert.name}
                     </p>
-                    <p className="text-sm text-gray-400 group-hover:text-gray-300 transition-colors">
-                        {cert.issuer} • {cert.year}
+                    <p className="text-sm text-gray-400">
+                      {cert.issuer} • {cert.year}
                     </p>
-                    </div>
-
-                    {/* Verified Badge */}
-                    <div className="text-green-400 opacity-0 group-hover:opacity-100 transition-opacity">
-                    ✓
-                    </div>
+                  </div>
                 </motion.div>
-                ))}
+              ))}
             </div>
             </motion.div>
 
@@ -411,9 +401,9 @@ export const Experience = () => {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-5xl mx-auto">
             {[
               { value: '3+', label: 'Years Experience' },
-              { value: '5', label: 'Companies Worked' },
-              { value: '50+', label: 'Projects Completed' },
-              { value: '30+', label: 'Happy Clients' },
+              { value: '3', label: 'Companies Worked' },
+              { value: '10+', label: 'Projects Completed' },
+              { value: '3+', label: 'Happy Clients' },
             ].map((stat, i) => (
               <motion.div
                 key={i}

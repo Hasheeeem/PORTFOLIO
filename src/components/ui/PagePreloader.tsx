@@ -1,28 +1,16 @@
 import { motion, AnimatePresence } from 'framer-motion';
-import { useEffect, useState } from 'react';
 
 interface PagePreloaderProps {
   isLoading: boolean;
 }
 
 export const PagePreloader = ({ isLoading }: PagePreloaderProps) => {
-  const [count, setCount] = useState(0);
-
-  useEffect(() => {
-    if (isLoading && count < 100) {
-      const timer = setTimeout(() => {
-        setCount(prev => Math.min(prev + Math.random() * 15, 100));
-      }, 150);
-      return () => clearTimeout(timer);
-    }
-  }, [isLoading, count]);
-
   return (
     <AnimatePresence>
       {isLoading && (
         <motion.div
           initial={{ opacity: 1 }}
-          exit={{ opacity: 0, scale: 1.1 }}
+          exit={{ opacity: 0 }}
           transition={{ duration: 0.8, ease: [0.43, 0.13, 0.23, 0.96] }}
           className="fixed inset-0 z-[9999] bg-black flex items-center justify-center"
         >
@@ -49,10 +37,10 @@ export const PagePreloader = ({ isLoading }: PagePreloaderProps) => {
               initial={{ scale: 0.5, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               transition={{ duration: 0.6, ease: [0.43, 0.13, 0.23, 0.96] }}
-              className="mb-12"
+              className="mb-8"
             >
               {/* Morphing Letter H */}
-              <div className="relative w-48 h-48 mx-auto">
+              <div className="relative w-32 h-32 md:w-48 md:h-48 mx-auto">
                 {/* Outer Ring */}
                 <motion.div
                   className="absolute inset-0 rounded-full border-2"
@@ -75,7 +63,7 @@ export const PagePreloader = ({ isLoading }: PagePreloaderProps) => {
                 {/* Letter H */}
                 <div className="absolute inset-0 flex items-center justify-center">
                   <motion.div
-                    className="text-8xl font-black bg-gradient-to-r from-purple-400 via-pink-400 to-blue-400 bg-clip-text text-transparent"
+                    className="text-6xl md:text-8xl font-black bg-gradient-to-r from-purple-400 via-pink-400 to-blue-400 bg-clip-text text-transparent"
                     animate={{ 
                       scale: [1, 1.05, 1],
                     }}
@@ -87,7 +75,7 @@ export const PagePreloader = ({ isLoading }: PagePreloaderProps) => {
               </div>
             </motion.div>
 
-            {/* Loading Text - Glitch Effect */}
+            {/* Loading Text - Simple */}
             <motion.div
               className="mb-8 overflow-hidden"
               initial={{ opacity: 0 }}
@@ -95,7 +83,7 @@ export const PagePreloader = ({ isLoading }: PagePreloaderProps) => {
               transition={{ delay: 0.3 }}
             >
               <motion.p
-                className="text-2xl font-bold text-white"
+                className="text-xl md:text-2xl font-bold text-white"
                 animate={{ 
                   textShadow: [
                     '0 0 10px rgba(139, 92, 246, 0.5)',
@@ -109,34 +97,24 @@ export const PagePreloader = ({ isLoading }: PagePreloaderProps) => {
               </motion.p>
             </motion.div>
 
-            {/* Progress Number - Large */}
-            <motion.div
-              className="text-7xl font-black mb-8 bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent tabular-nums"
-              key={Math.floor(count)}
-            >
-              {Math.floor(count)}%
-            </motion.div>
-
-            {/* Minimal Progress Bar */}
-            <div className="relative w-96 max-w-[90vw] mx-auto">
+            {/* Progress Bar - NO PERCENTAGE */}
+            <div className="relative w-80 max-w-[90vw] mx-auto">
               <div className="h-1 bg-white/10 rounded-full overflow-hidden">
                 <motion.div
                   className="h-full bg-gradient-to-r from-purple-500 via-pink-500 to-blue-500 rounded-full"
                   initial={{ width: '0%' }}
-                  animate={{ width: `${count}%` }}
-                  transition={{ duration: 0.3, ease: 'easeOut' }}
+                  animate={{ width: '100%' }}
+                  transition={{ 
+                    duration: 2.5,
+                    ease: 'easeInOut',
+                    repeat: Infinity,
+                  }}
                 />
               </div>
             </div>
 
-            {/* Subtext */}
-            <motion.p
-              className="text-white/40 text-sm mt-6 font-mono"
-              animate={{ opacity: [0.4, 0.8, 0.4] }}
-              transition={{ duration: 2, repeat: Infinity }}
-            >
-              Preparing your experience...
-            </motion.p>
+            {/* NO PERCENTAGE TEXT */}
+            {/* NO "PREPARING YOUR EXPERIENCE" TEXT */}
           </div>
         </motion.div>
       )}

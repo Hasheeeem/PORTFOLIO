@@ -12,9 +12,9 @@ export const Zypher = () => {
   ];
 
   const achievements = [
-    { value: '50+', label: 'Projects' },
-    { value: '30+', label: 'Clients' },
-    { value: '5', label: 'Countries' },
+    { value: '5+', label: 'Projects' },
+    { value: '3+', label: 'Clients' },
+    { value: '3', label: 'Countries' },
     { value: '99%', label: 'Satisfaction' },
   ];
 

@@ -62,7 +62,7 @@ export const Contact = () => {
                   onChange={(e) => setFormData({...formData, name: e.target.value})}
                   required
                   className="w-full bg-white/5 border-2 border-white/10 rounded-2xl px-6 py-4 text-lg focus:border-purple-500 outline-none transition-all"
-                  placeholder="John Doe"
+                  placeholder=""
                 />
               </div>
 
@@ -74,7 +74,7 @@ export const Contact = () => {
                   onChange={(e) => setFormData({...formData, email: e.target.value})}
                   required
                   className="w-full bg-white/5 border-2 border-white/10 rounded-2xl px-6 py-4 text-lg focus:border-purple-500 outline-none transition-all"
-                  placeholder="john@example.com"
+                  placeholder=""
                 />
               </div>
 
@@ -123,7 +123,7 @@ export const Contact = () => {
               <h3 className="text-3xl font-bold">Get in Touch</h3>
               
               <a
-                href="mailto:hello@hasheem.dev"
+                href="mailto:hasheemhsm4@gmail.com"
                 className="flex items-center gap-4 p-6 bg-white/5 rounded-2xl hover:bg-white/10 transition-all group"
               >
                 <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-purple-600 to-pink-600 flex items-center justify-center">
@@ -132,7 +132,7 @@ export const Contact = () => {
                 <div>
                   <div className="text-sm text-gray-400">Email</div>
                   <div className="font-bold text-lg group-hover:text-purple-400 transition-colors">
-                    hello@hasheem.dev
+                    hasheemhsm4@gmail.com
                   </div>
                 </div>
               </a>
@@ -155,7 +155,7 @@ export const Contact = () => {
                 {[
                   { icon: Github, href: 'https://github.com/Hasheeeem', label: 'GitHub' },
                   { icon: Linkedin, href: '#', label: 'LinkedIn' },
-                  { icon: Mail, href: 'mailto:hello@hasheem.dev', label: 'Email' },
+                  { icon: Mail, href: 'mailto:hasheemhsm4@gmail.com', label: 'Email' },
                 ].map((social, i) => (
                   <a
                     key={i}
