@@ -1,0 +1,28 @@
+{
+  "name": "Hasheem - Full-Stack Developer & AI/ML Engineer",
+  "short_name": "Hasheem",
+  "description": "Professional Full-Stack Developer, AI/ML Engineer, and Founder of ZYPHER",
+  "start_url": "https://muhammed-hasheem.me/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#000000",
+  "theme_color": "#000000",
+  "orientation": "portrait",
+  "categories": ["portfolio", "technology", "developer"],
+  "lang": "en",
+  "dir": "ltr",
+  "icons": [
+    {
+      "src": "/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
