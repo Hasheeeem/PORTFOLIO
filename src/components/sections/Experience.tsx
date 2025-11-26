@@ -15,7 +15,7 @@ export const Experience = () => {
 
   const workExperience = [
     {
-      year: '2024 - Present',
+      year: '2025 - Present',
       role: 'Founder & CEO',
       company: 'ZYPHER',
       type: 'Full-time',
